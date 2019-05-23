@@ -1,5 +1,6 @@
 package github.chorman0773.gac14.chat.core.channel;
 
+import net.minecraft.command.CommandSource;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 
@@ -9,4 +10,7 @@ public interface IFilter {
 	default boolean matches(ITextComponent comp) {
 		return matches(comp.getUnformattedComponentText());
 	}
+	
+	boolean canBypassFilter(CommandSource src);
+	boolean canRemoveFilter(CommandSource src);
 }
