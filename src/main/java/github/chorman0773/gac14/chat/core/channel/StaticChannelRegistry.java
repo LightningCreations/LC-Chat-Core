@@ -20,6 +20,7 @@ public class StaticChannelRegistry implements IChannelResolver {
 	public static void addRegistry(NewRegistry newRegistry) {
 		IForgeRegistry<IStaticChannel> registry = new RegistryBuilder<IStaticChannel>()
 				.setType(IStaticChannel.class)
+				.disableSync()
 				.create();
 		instance = new StaticChannelRegistry(registry);
 		Channels.addResolver(instance);

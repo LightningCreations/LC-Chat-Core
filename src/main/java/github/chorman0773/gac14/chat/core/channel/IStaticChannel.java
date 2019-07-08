@@ -15,5 +15,9 @@ public interface IStaticChannel extends IChannel, IForgeRegistryEntry<IStaticCha
 	default IStaticChannel setRegistryName(ResourceLocation name) {
 		throw new UnsupportedOperationException("setRegistryName");
 	}
+	
+	default ResourceLocation getRegistryName() {
+		return this.getChannelId();
+	}
 
 }
